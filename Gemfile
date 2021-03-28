@@ -15,12 +15,14 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 gem "haml-rails", "~> 2.0"
 gem "simple_form"
+gem "devise"
 
 group :development, :test do
   gem "amazing_print"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
   gem "rspec-rails"
+  gem "pry"
   gem "shoulda-matchers", "~> 4.0"
 end
 

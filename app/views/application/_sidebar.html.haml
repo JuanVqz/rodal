@@ -1,0 +1,11 @@
+%aside.main-sidebar.main-sidebar-custom.sidebar-dark-primary.elevation-4
+  = link_to root_path, class: "brand-link text-center" do
+    %span.brand-text.font-weight-light Rodal
+
+  .sidebar
+    %nav.mt-2
+      %ul.nav.nav-pills.nav-sidebar.flex-column{"data-accordion": "false", "data-widget": "treeview", role: "menu"}
+        %li.nav-item
+          = link_to "#", class: "nav-link" do
+            %i.fas.fa-check.nav-icon
+            %p Productos

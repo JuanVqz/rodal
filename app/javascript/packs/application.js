@@ -11,3 +11,9 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+import "../stylescheets/app"
+import "@fortawesome/fontawesome-free/js/all"
+import "admin-lte"
+

@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_221642) do
+ActiveRecord::Schema.define(version: 2021_04_04_194159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "productos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "codigo"
+    t.string "existencia", default: "0"
+    t.text "descripcion"
+    t.decimal "precio_de_compra", default: "0.0"
+    t.string "iva", default: "16"
+    t.string "type"
+    t.bigint "usuario_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["usuario_id"], name: "index_productos_on_usuario_id"
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -33,4 +47,5 @@ ActiveRecord::Schema.define(version: 2021_03_28_221642) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "productos", "usuarios"
 end

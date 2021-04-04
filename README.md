@@ -17,9 +17,9 @@ Inventario y venta de mofles.
     - con instalacion
 
 - Productos
-  - Mofles
-  - Aros
-  - Juntas
+  - Mofle
+  - Aro
+  - Junta
 
 ## Testing
 

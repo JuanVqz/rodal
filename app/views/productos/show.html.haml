@@ -1,0 +1,28 @@
+.card
+  .card-header
+    .card-title Detalle del producto
+  .card-body
+    %p#notice= notice
+
+    .row
+      .col-sm-12.col
+        %b Nombre:
+        = @producto.nombre
+      .col-sm-12.col
+        %b Codigo:
+        = @producto.codigo
+      .col-sm-12.col
+        %b Precio de compra:
+        = @producto.precio_de_compra
+      .col-sm-12.col
+        %b Descripcion:
+        = @producto.descripcion
+      .col-sm-12.col
+        %b Iva:
+        = @producto.iva
+      .col-sm-12.col
+        %b Tipo:
+        = @producto.type
+
+    = link_to "Regresar", productos_path, class: "btn btn-sm btn-info"
+    = link_to "Editar", edit_producto_path(@producto), class: "btn btn-sm btn-warning"

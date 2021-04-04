@@ -1,0 +1,31 @@
+.card
+  .card-header
+    .card-title Lista de productos
+    .card-tools
+      = link_to "Nuevo producto", new_producto_path, class: "btn btn-sm btn-info"
+  .card-body
+    .table-responsive
+      %table.table.table-bordered.table-hover
+        %thead
+          %tr
+            %th #
+            %th Nombre
+            %th Codigo
+            %th Existencia
+            %th Precio de compra
+            %th Tipo
+            %th.text-right Acciones
+
+        %tbody
+          - @productos.each do |producto|
+            %tr
+              %td= producto.id
+              %td= producto.nombre
+              %td= producto.codigo
+              %td= producto.existencia
+              %td= number_to_currency producto.precio_de_compra
+              %td= producto.type
+              %td.text-right
+                = link_to "Info", producto_path(producto), class: "btn btn-sm btn-info"
+                = link_to "Editar", edit_producto_path(producto), class: "btn btn-sm btn-warning"
+
